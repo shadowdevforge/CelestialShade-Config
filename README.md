@@ -76,7 +76,7 @@ https://github.com/user-attachments/assets/a0525b53-50c1-4224-876d-374d8291d3b7
 | `Super + W` | **Next Wallpaper** (Cycles current theme folder) |
 | `Super + Return` | Open Terminal (Ghostty) |
 | `Super + Space` | Open App Launcher |
-| `Super + Shift + S` | Screenshot Menu |
+| `Super + Print` | Screenshot Menu |
 | `Super + .` | Emoji Picker |
 
 ---
