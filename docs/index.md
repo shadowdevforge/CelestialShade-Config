@@ -6,7 +6,7 @@ hero:
   text: "A Self Contained Lua-driven Hyprland Ecosystem"
   tagline: "Minimal and Cozy by default. Powerful when needed."
   image:
-    src: /CelestialShade-Config/docs/hero.png
+    src: /CelestialShade-Config/hero.png
     alt: Celestial Shade Desktop
   actions:
     - theme: brand
