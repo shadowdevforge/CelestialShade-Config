@@ -1,0 +1,53 @@
+/* Import generated colors */
+@import "../../theme/artifact/theme.css";
+
+* {
+    background-image: none;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 36px;
+    box-shadow: none;
+}
+
+window {
+    background-color: rgba(30, 30, 46, 0.9);
+}
+
+/* :: THE GRID CONTAINER :: */
+#grid {
+    background-color: transparent;
+    /* Force buttons to align in the center */
+    margin: 200px 100px;
+}
+
+/* :: BUTTONS :: */
+button {
+    background-color: @bg_mantle;
+    color: @fg_text;
+    border: 3px solid @bg_base;
+    border-radius: 24px;
+    
+    /* Force exact size */
+    margin: 20px;
+    min-width: 120px;
+    min-height: 120px;
+
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* :: HOVER :: */
+button:focus, button:active, button:hover {
+    background-color: @bg_base;
+    color: @primary;
+    border: 3px solid @primary;
+    /* Scale effect */
+    margin: 10px; /* Reduces margin to allow expansion without shifting layout */
+    min-width: 140px;
+    min-height: 140px;
+    box-shadow: 0 0 30px alpha(@primary, 0.4);
+}
+
+/* :: CLEANUP :: */
+#lock, #logout, #shutdown, #reboot, #suspend, #hibernate {
+    margin: 20px;
+}

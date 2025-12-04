@@ -1,0 +1,22 @@
+/* Import the generated Rofi variables */
+@import "../../theme/artifact/theme.rasi"
+
+* {
+    /* Use the variables defined in theme.rasi */
+    /* Note: In Rofi, variables are used via @varname */
+    
+    /* Map generated variables to Rofi properties */
+    background:     @bg-base;
+    background-alt: @bg-mantle;
+    foreground:     @fg-text;
+    selected:       @primary;
+    active:         @secondary;
+    urgent:         @error;
+
+    border: 0;
+    margin: 0;
+    padding: 0;
+    spacing: 0;
+}
+
+/* ... Rest of your config stays the same ... */

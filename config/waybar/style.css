@@ -1,0 +1,247 @@
+/* -----------------------------------------------------
+ * CELESTIAL SHADE :: UNREAL ENGINE
+ * ----------------------------------------------------- */
+@import "../../theme/artifact/theme.css";
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: bold;
+    font-size: 14px;
+    min-height: 0;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+window#waybar {
+    background: transparent;
+    color: @fg_text;
+}
+
+tooltip {
+    background: @bg_base;
+    border: 1px solid @primary;
+    border-radius: 12px;
+}
+
+/* -----------------------------------------------------
+ * LEFT: WORKSPACES & STATS
+ * ----------------------------------------------------- */
+
+#custom-launcher {
+    background: @bg_base;
+    color: @accent;
+    padding: 0px 16px;
+    margin-right: 5px;
+    border-radius: 16px;
+    font-size: 18px;
+    opacity: 0.9;
+}
+#custom-launcher:hover {
+    background: @accent;
+    color: @bg_base;
+    box-shadow: 0 0 10px @accent;
+}
+
+#workspaces {
+    background: alpha(@bg_base, 0.6);
+    margin-right: 5px;
+    padding: 5px;
+    border-radius: 16px;
+    border-bottom: 2px solid @bg_mantle;
+}
+
+#workspaces button {
+    padding: 0 6px;
+    color: @fg_sub;
+    border-radius: 10px;
+}
+
+#workspaces button.active {
+    color: @primary;
+    background: alpha(@primary, 0.1);
+    min-width: 40px; /* Expands active workspace */
+    border-bottom: 2px solid @primary;
+}
+
+#workspaces button:hover {
+    background: @bg_mantle;
+    color: @fg_text;
+}
+
+/* Stats Group */
+#cpu, #memory {
+    background: alpha(@bg_base, 0.6);
+    color: @fg_text;
+    padding: 0 12px;
+}
+
+#cpu {
+    border-radius: 16px 0 0 16px;
+    margin-left: 5px;
+}
+#memory {
+    border-radius: 0 16px 16px 0;
+    border-left: 1px solid alpha(@fg_text, 0.1);
+}
+
+/* -----------------------------------------------------
+ * CENTER: TIME & WEATHER
+ * ----------------------------------------------------- */
+
+#clock, #custom-weather {
+    background: alpha(@bg_base, 0.8);
+    color: @fg_text;
+    padding: 2px 15px;
+}
+
+#clock {
+    border-radius: 16px 0 0 16px;
+    margin-right: 0;
+    border-bottom: 2px solid @secondary;
+    color: @secondary;
+}
+
+#custom-weather {
+    border-radius: 0 16px 16px 0;
+    margin-left: 0;
+    border-bottom: 2px solid @accent;
+    color: @accent;
+}
+
+/* -----------------------------------------------------
+ * RIGHT: MEDIA & HARDWARE
+ * ----------------------------------------------------- */
+
+#mpris {
+    background: alpha(@bg_base, 0.6);
+    color: @primary;
+    border-radius: 16px;
+    padding: 0 15px;
+    margin-right: 5px;
+    font-weight: normal;
+}
+
+#mpris.paused {
+    color: @fg_sub;
+    font-style: italic;
+}
+
+/* Hardware Group */
+#pulseaudio, #network, #battery {
+    background: alpha(@bg_base, 0.6);
+    color: @fg_text;
+    padding: 0 12px;
+}
+
+#pulseaudio {
+    border-radius: 16px 0 0 16px;
+    color: @primary;
+}
+
+#network {
+    color: @secondary;
+}
+
+#battery {
+    border-radius: 0 16px 16px 0;
+}
+
+#battery.charging { color: @success; }
+#battery.warning { color: @warning; }
+#battery.critical { 
+    color: @error;
+    animation: blink 0.5s infinite alternate;
+}
+
+/* Tray */
+#tray {
+    background: alpha(@bg_base, 0.6);
+    padding: 0 12px;
+    border-radius: 16px;
+    margin: 0 5px;
+}
+
+/* Power Button */
+#custom-power {
+    background: alpha(@error, 0.1);
+    color: @error;
+    padding: 0 14px;
+    border-radius: 16px;
+    margin-left: 5px;
+    border-bottom: 2px solid @error;
+}
+
+#custom-power:hover {
+    background: @error;
+    color: @bg_base;
+    box-shadow: 0 0 15px @error;
+}
+
+@keyframes blink {
+    to { color: @bg_base; background: @error; }
+}
+
+/* -----------------------------------------------------
+ * SCREENSHOT DRAWER
+ * ----------------------------------------------------- */
+
+/* The Main Pill Container */
+#group-screenshot {
+    background: alpha(@bg_base, 0.5); /* Solid background for the whole group */
+    color: @accent;
+    border-radius: 16px;
+    margin: 0 5px;
+    padding: 2px; /* Small padding creates a border-like effect */
+    border: 1px solid @bg_mantle;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* The Handle (Camera Icon) */
+#custom-shot-icon {
+    background: alpha(@bg_mantle, 0.5); /* Distinct background for handle */
+    color: @accent;
+    padding: 4px 12px;
+    margin: 2px;
+    border-radius: 14px;
+    font-size: 16px;
+}
+
+/* The Children (Hidden buttons) */
+.screenshot-child {
+    background: transparent;
+    color: @fg_text;
+    padding: 0 10px;
+    margin: 0 2px;
+    border-radius: 12px;
+}
+
+/* Hover Effects for Children */
+#custom-shot-region:hover,
+#custom-shot-window:hover,
+#custom-shot-full:hover {
+    background: @accent;
+    color: @bg_base;
+    box-shadow: 0 0 10px alpha(@accent, 0.4);
+}
+
+/* Active State of the Drawer */
+#group-screenshot.drawer-open {
+    border-color: @accent;
+    background: @bg_base; /* Darker when open to make icons pop */
+}
+
+#custom-cheatsheet {
+    background: alpha(@bg_base, 0.6);
+    color: @secondary; /* Blue/Cyan look */
+    padding: 0 12px;
+    margin: 0 5px;
+    border-radius: 16px;
+    font-size: 16px;
+}
+
+#custom-cheatsheet:hover {
+    background: @secondary;
+    color: @bg_base;
+    box-shadow: 0 0 10px @secondary;
+}

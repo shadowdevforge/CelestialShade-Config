@@ -1,0 +1,41 @@
+# -----------------------------------------------------
+# CELESTIAL SHADE :: MAKO TEMPLATE
+# -----------------------------------------------------
+
+# :: PLACEMENT
+layer=overlay
+anchor=top-right
+margin=15
+padding=20
+width=380
+height=150
+
+# :: LOOK & FEEL
+font=JetBrainsMono Nerd Font 11
+border-size=2
+border-radius=15
+icons=1
+max-icon-size=48
+default-timeout=5000
+ignore-timeout=0
+
+# :: COLORS (Injected)
+background-color={{base}}E6
+text-color={{text}}
+border-color={{active}}
+
+# :: PROGRESS BAR (Fixed)
+progress-color={{active}}
+
+# :: URGENCY LEVELS
+[urgency=low]
+border-color={{inactive}}
+text-color={{subtext}}
+
+[urgency=normal]
+border-color={{active}}
+
+[urgency=critical]
+border-color={{error}}
+default-timeout=0
+background-color={{base}}FF

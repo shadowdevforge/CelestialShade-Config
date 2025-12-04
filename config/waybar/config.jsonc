@@ -1,0 +1,176 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 46,
+    "margin-top": 10,
+    "margin-left": 15,
+    "margin-right": 15,
+    "spacing": 0,
+
+    // Load Modules
+    "modules-left": ["custom/launcher", "hyprland/workspaces", "group/stats"],
+    "modules-center": ["clock", "custom/weather"],
+    "modules-right": ["mpris", "group/hardware", "custom/cheatsheet", "group/screenshot", "tray", "custom/power",],
+
+    // :: GROUPS ::
+    "group/stats": {
+        "orientation": "horizontal",
+        "modules": ["cpu", "memory"]
+    },
+    
+    "group/hardware": {
+        "orientation": "horizontal",
+        "modules": ["pulseaudio", "network", "battery"]
+    },
+
+    // :: MODULES ::
+    "custom/launcher": {
+        "format": " ",
+        "on-click": "rofi -show drun -theme ~/.config/hypr/config/rofi/config.rasi",
+        "tooltip": false
+    },
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "default": " ",
+            "active": " 󰮯 ",
+            "urgent": " "
+        },
+        "persistent-workspaces": { "1": [], "2": [], "3": [] },
+        "on-click": "activate"
+    },
+
+    "cpu": {
+        "format": "   {usage}%",
+        "interval": 2
+    },
+
+    "memory": {
+        "format": "   {}%",
+        "interval": 2
+    },
+
+    "clock": {
+        "format": "{:%H:%M}",
+        "format-alt": "{:%A, %B %d}",
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "days": "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+                "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        }
+    },
+
+    "custom/weather": {
+        "format": "{}",
+        "exec": "~/.config/hypr/scripts/weather.lua",
+        "return-type": "json",
+        "interval": 600
+    },
+
+    "mpris": {
+        "format": "{player_icon} {title}",
+        "format-paused": "{status_icon} <i>{title}</i>",
+        "player-icons": {
+            "default": "  ",
+            "spotify": "  ",
+            "firefox": "  "
+        },
+        "status-icons": {
+            "paused": "  "
+        },
+        "max-length": 35
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "  ",
+        "format-icons": { "default": ["  ", "  ", "  "] },
+        "on-click": "pavucontrol"
+    },
+
+    "network": {
+        "format-wifi": "  ",
+        "format-ethernet": "󰈀  ",
+        "format-disconnected": "󰖪  ",
+        "tooltip-format": "{essid}",
+        "on-click": "ghostty -e nmtui"
+    },
+
+    "battery": {
+        "states": { "warning": 30, "critical": 15 },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-icons": [" ", " ", " ", " ", " "]
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    },
+
+      
+    "custom/cheatsheet": {
+        "format": " ",
+        "tooltip": true,
+        "tooltip-format": "Keybindings",
+        // Launch Ghostty with a specific class so Hyprland can float it
+        "on-click": "ghostty --class=cheatsheet -e python3 ~/.config/hypr/scripts/cheatsheet.py"
+    },
+
+      // :: SCREENSHOT GROUP (Drawer) ::
+    "group/screenshot": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "screenshot-child",
+            "transition-left-to-right": true // <--- EXPANDS TO RIGHT
+        },
+        "modules": [
+            "custom/shot-icon",   // Handle (Visible)
+            "custom/shot-region", // Children (Hidden until hover)
+            "custom/shot-window",
+            "custom/shot-full"
+        ]
+    },
+
+    "custom/shot-icon": {
+        "format": " ",
+        "tooltip": true,
+        "tooltip-format": "Screenshot Menu"
+    },
+
+    "custom/shot-region": {
+        "format": "   ",
+        "on-click": "~/.config/hypr/scripts/screenshot.lua region",
+        "tooltip": true,
+        "tooltip-format": "Capture Region"
+    },
+
+    "custom/shot-window": {
+        "format": "   ",
+        "on-click": "~/.config/hypr/scripts/screenshot.lua window",
+        "tooltip": true,
+        "tooltip-format": "Capture Window"
+    },
+
+    "custom/shot-full": {
+        "format": "   ",
+        "on-click": "~/.config/hypr/scripts/screenshot.lua output",
+        "tooltip": true,
+        "tooltip-format": "Capture Monitor"
+    },
+
+    "custom/power": {
+        "format": "  ",
+        "tooltip": false,
+        "on-click": "wlogout --layout $HOME/.config/hypr/config/wlogout/layout --css $HOME/.config/hypr/config/wlogout/style.css --protocol layer-shell"
+    },
+}

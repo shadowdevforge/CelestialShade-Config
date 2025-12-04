@@ -1,0 +1,22 @@
+.# Ignore Logs
+*.log
+csinstaller.log
+
+# Ignore State Files
+theme/.current
+theme/.wall_index
+theme/wallpapers/.current_image
+
+# Ignore Cache
+assets/emojis.txt
+assets/
+theme/artifact/
+
+# Ignore System Junk
+.DS_Store
+Thumbs.db/docs/guide/source_code.md
+
+# Docs dependencies
+docs/node_modules/
+docs/.vitepress/dist/
+docs/.vitepress/cache/
