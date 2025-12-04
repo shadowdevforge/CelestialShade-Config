@@ -10,20 +10,22 @@ export default defineConfig({
   cleanUrls: true,
   lastUpdated: true,
 
+  // 1. Re-added Favicon support
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }]
   ],
 
   themeConfig: {
-    logo: '/logo.png',
+    // 2. Re-added Logo (ensure logo.png is in docs/public/)
+    // If you don't have a logo file yet, you can comment this out.
+    // logo: '/logo.png', 
+    
     siteTitle: 'Celestial Shade',
-
-    // Search
+    
     search: {
       provider: 'local'
     },
 
-    // Top Navigation
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Installation', link: '/guide/installation' },
@@ -31,14 +33,14 @@ export default defineConfig({
       { text: 'GitHub', link: 'https://github.com/shadowdevforge/CelestialShade-Config' }
     ],
 
-    // Sidebar Navigation
     sidebar: [
       {
         text: 'Getting Started',
         collapsed: false,
         items: [
           { text: 'Installation', link: '/guide/installation' },
-          { text: 'System Doctor', link: '/guide/doctor' }
+          // 3. Re-added System Doctor (It's a key feature!)
+          { text: 'System Doctor', link: '/guide/doctor' } 
         ]
       },
       {
@@ -46,7 +48,6 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: 'The Lua Engine', link: '/guide/engine' },
-          { text: 'Project Structure', link: '/guide/structure' } // Make sure this file exists or remove line
         ]
       },
       {
@@ -55,23 +56,19 @@ export default defineConfig({
         items: [
           { text: 'Theming & Wallpapers', link: '/guide/theming' },
           { text: 'Keybindings', link: '/guide/keybindings' },
-          { text: 'Waybar Islands', link: '/guide/waybar' } // Make sure this file exists or remove line
         ]
       }
     ],
 
-    // Social Links
     socialLinks: [
       { icon: 'github', link: 'https://github.com/shadowdevforge/CelestialShade-Config' }
     ],
 
-    // Footer
     footer: {
       message: 'Released under the MIT License.',
       copyright: 'Copyright © 2025-present shadowdevforge'
     },
 
-    // Edit Link
     editLink: {
       pattern: 'https://github.com/shadowdevforge/CelestialShade-Config/edit/main/docs/:path',
       text: 'Edit this page on GitHub'

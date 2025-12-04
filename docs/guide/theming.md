@@ -1,6 +1,6 @@
 # 🎨 Theming System
 
-Celestial Shade currently ships with **7 Universal Palettes**:
+Celestial Shade currently ships with **8 Universal Palettes**:
 `Catppuccin`, `Rose Pine`, `Tokyo Night`, `Nord`, `Dracula`, `Gruvbox`, `Synthwave`, and `Everforest`.
 
 ## Switching Themes

@@ -9,8 +9,9 @@
 ![Catppuccin](https://img.shields.io/badge/Aesthetic-Catppuccin-2d2d3a?style=for-the-badge&logo=catppuccin&logoColor=f5c2e7)
 
 <br/>
-
-![Screenshot](docs/hero.png)
+<pre>
+<img width="1920" height="1080" alt="preview" src="https://github.com/user-attachments/assets/181bc720-d3d5-4959-8225-2683c65bbb2e" />
+</pre>
 
 <br/>
 
@@ -54,6 +55,18 @@ cd ~/.config/hypr
 # 3. Run the Lua Installer
 lua installation.lua
 ```
+# Showcase
+
+## Changing themes
+
+https://github.com/user-attachments/assets/2cf6131d-2861-4b03-97a7-f32695c2da59
+
+## Waybar overview
+
+https://github.com/user-attachments/assets/a0525b53-50c1-4224-876d-374d8291d3b7
+
+
+
 
 ## ⌨️ Quick Keybindings
 
