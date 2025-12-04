@@ -1,27 +1,27 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
+  // CRITICAL: Matches your repo name for GitHub Pages
   base: '/CelestialShade-Config/', 
-  
-  title: "Celestial Shade",
-  export default defineConfig({
+
   title: "Celestial Shade",
   description: "A Lua-driven, modular Hyprland ecosystem.",
   
-  // Removes .html from URLs for a cleaner look
   cleanUrls: true,
   lastUpdated: true,
 
   head: [
-    ['link', { rel: 'icon', href: '/favicon.ico' }],
-    // Font setup (optional, if you want to force JetBrains Mono on the site)
-    ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap' }]
+    ['link', { rel: 'icon', href: '/favicon.ico' }]
   ],
 
   themeConfig: {
-    // Logo in top left
-    logo: '/logo.png', // Make sure to add a logo to public/logo.png
+    logo: '/logo.png',
     siteTitle: 'Celestial Shade',
+
+    // Search
+    search: {
+      provider: 'local'
+    },
 
     // Top Navigation
     nav: [
@@ -31,14 +31,14 @@ export default defineConfig({
       { text: 'GitHub', link: 'https://github.com/shadowdevforge/CelestialShade-Config' }
     ],
 
-    // Sidebar Navigation (The important part)
+    // Sidebar Navigation
     sidebar: [
       {
         text: 'Getting Started',
         collapsed: false,
         items: [
-          { text: 'Introduction', link: '/guide/intro' }, // Optional intro page
           { text: 'Installation', link: '/guide/installation' },
+          { text: 'System Doctor', link: '/guide/doctor' }
         ]
       },
       {
@@ -46,6 +46,7 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: 'The Lua Engine', link: '/guide/engine' },
+          { text: 'Project Structure', link: '/guide/structure' } // Make sure this file exists or remove line
         ]
       },
       {
@@ -53,19 +54,16 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: 'Theming & Wallpapers', link: '/guide/theming' },
+          { text: 'Keybindings', link: '/guide/keybindings' },
+          { text: 'Waybar Islands', link: '/guide/waybar' } // Make sure this file exists or remove line
         ]
       }
     ],
 
-    // Social Icons
+    // Social Links
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/shadowdevforge/CelestialShade-Config' },
+      { icon: 'github', link: 'https://github.com/shadowdevforge/CelestialShade-Config' }
     ],
-
-    // Built-in Search
-    search: {
-      provider: 'local'
-    },
 
     // Footer
     footer: {
